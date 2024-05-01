@@ -1,0 +1,285 @@
+:root{
+    --Color-Primero: #fffc8b;
+    --Color-Segundo: #ffec21;
+    --Color-Tercero: #ff8930;
+    --Color-Cuarto: #0a5090;
+    --Color-Quinto: #132029;
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+    vertical-align: auto;
+}
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media(min-width: 768px){
+
+    .Encabezado .Menu-Navegacion__Pequeño{
+        display: none;
+    }
+
+    /*
+        Pantallas Grandes
+
+        Encabezado - <header>
+    */
+
+    #Header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background: var(--Color-Primero);
+    }
+
+    .Encabezado .Logotipo a{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        margin-left: 20px;
+    }
+
+    .Encabezado .Logotipo h1{
+        font-size: 20px;
+        color: var(--Color-Cuarto);
+    }
+
+    .Encabezado .Logotipo img{
+        height: 50px;
+        width: 50px;
+    }
+
+    .Menu-Navegacion__Grande ul{
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+    }
+
+    .Menu-Navegacion__Grande .Lista-Navegacion__Grande li{
+        list-style: none;
+        margin-left: 20px;
+    }
+
+    .Menu-Navegacion__Grande .Lista-Navegacion__Grande .Navegacion-Grande__EtiquetasNuevas-HTML a{
+        text-decoration: none;
+    }
+
+    .Menu-Navegacion__Grande .Lista-Navegacion__Grande .Navegacion-Grande__EtiquetasNuevas-HTML h2{
+        font-size: 15px;
+        color: var(--Color-Cuarto);
+    }
+
+    /* Menú - <main> */
+
+    #Main{
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background: var(--Color-Tercero);
+    }
+
+    .Menu details{
+        color: var(--Color-Cuarto);
+    }
+
+    .Menu details:hover{
+        cursor: pointer;
+    }
+
+    .Menu .Main__Details summary p{
+        font-size: 17px;
+    }
+
+    /* Pie de Página - <footer> */
+
+    #Footer{
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background: var(--Color-Quinto);
+    }
+
+    #Footer small{
+        font-size: 15px;
+        color: var(--Color-Tercero);
+    }
+
+    #Footer a{
+        color: var(--Color-Segundo);
+    }
+
+    #Footer a:hover{
+        cursor: pointer;
+    }
+
+}
+
+@media(max-width: 767px){
+
+    .Encabezado .Menu-Navegacion__Grande{
+        display: none;
+    }
+
+    /*
+        Pantallas Pequeñas y Medianas
+
+        Encabezado - <header>
+    */
+
+    #Header{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background: var(--Color-Primero);
+        padding-top: 2.5vw;
+        padding-bottom: 2.5vw;
+        position: sticky;
+        top: 0px;
+        z-index: 2;
+    }
+
+    .Encabezado .Logotipo a{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .Encabezado .Logotipo h1{
+        font-size: 4vw;
+        color: var(--Color-Cuarto);
+    }
+
+    .Encabezado .Logotipo img{
+        height: 7vw;
+        width: 7vw;
+    }
+
+    .Menu-Navegacion__Pequeño .Label-Menu{
+        position: relative;
+        cursor: pointer;
+    }
+
+    .Menu-Navegacion__Pequeño .Label-Menu #Spn-1, #Spn-2, #Spn-3{
+        position: absolute;
+        content: '';
+        background: var(--Color-Cuarto);
+        width: 20px;
+        height: 4px;
+        top: -6px;
+        border-radius: 1.5rem;
+        transition: all 400ms ease-in-out;
+    }
+
+    .Menu-Navegacion__Pequeño .Label-Menu #Spn-2{
+        top: -1px;
+    }
+
+    .Menu-Navegacion__Pequeño .Label-Menu #Spn-3{
+        top: 4px;
+    }
+
+    .Menu-Navegacion__Pequeño #Btn-Menu:checked ~ .Label-Menu #Spn-1{
+        transform: rotate(140deg);
+        top: -1px;
+    }
+
+    .Menu-Navegacion__Pequeño #Btn-Menu:checked ~ .Label-Menu #Spn-2{
+        opacity: 0;
+    }
+
+    .Menu-Navegacion__Pequeño #Btn-Menu:checked ~ .Label-Menu #Spn-3{
+        transform: rotate(-140deg);
+        top: -1px;
+    }
+
+    .Menu-Navegacion__Pequeño #Btn-Menu{
+        display: none;
+    }
+
+    .Menu-Navegacion__Pequeño .Label-Navegation{
+        display: none;
+    }
+
+    .Menu-Navegacion__Pequeño #Btn-Menu:checked ~ .Label-Navegation{
+        display: block;
+        text-align: center;
+        position: absolute;
+        top: 12vw;
+        margin-top: 0vw;
+        left: 0%;
+        width: 100%;
+        background: var(--Color-Segundo);
+        padding-top: 2.5vw;
+        padding-bottom: 2.5vw;
+    }
+
+    .Menu-Navegacion__Pequeño .Label-Navegation .Lista-Navegacion__Pequeño li{
+        list-style: none;
+    }
+
+    .Menu-Navegacion__Pequeño .Label-Navegation .Lista-Navegacion__Pequeño .Navegacion-Pequeño__EtiquetasNuevas-HTML a{
+        text-decoration: none;
+    }
+
+    .Menu-Navegacion__Pequeño .Label-Navegation .Lista-Navegacion__Pequeño .Navegacion-Pequeño__EtiquetasNuevas-HTML a:hover{
+        color: var(--Color-Quinto);
+        cursor: pointer;
+    }
+
+    .Menu-Navegacion__Pequeño .Label-Navegation .Lista-Navegacion__Pequeño .Navegacion-Pequeño__EtiquetasNuevas-HTML h2{
+        font-size: 3vw;
+        color: var(--Color-Cuarto);
+    }
+
+    /* Menú de Navegación - <nav> */
+
+    #Main{
+        text-align: center;
+        background: var(--Color-Tercero);
+        color: var(--Color-Cuarto);
+        padding-top: 2.5vw;
+        padding-bottom: 2.5vw;
+    }
+
+    .Menu details{
+        color: var(--Color-Cuarto);
+    }
+
+    .Menu .Main__Details summary{
+        font-size: 3vw;
+    }
+
+    .Menu .Main__Details p{
+        font-size: 3vw;
+    }
+
+    .Menu details:hover{
+        cursor: pointer;
+    }
+
+    /* Pie de Página - <footer> */
+
+    #Footer{
+        text-align: center;
+        background: var(--Color-Quinto);
+        padding-top: 2.5vw;
+        padding-bottom: 2.5vw;
+    }
+
+    #Footer small{
+        font-size: 2.5vw;
+        color: var(--Color-Tercero);
+    }
+
+    #Footer a{
+        color: var(--Color-Segundo);
+    }
+
+}
